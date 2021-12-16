@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/tanchishedazuozhan.png" type="image/x-icon">
+    <title>蛇蛇大作战</title>
+    <style>
+        @font-face {
+            font-family: "恐怖蜘蛛";
+            src: url("./fonts/恐怖蜘蛛.ttf") format("truetype");
+        }
+
+        /* px,em,rem,%, vh, vw, vmin,vmax */
+       body {
+           height: 100vh;
+           width: 100vw;
+           display: flex;
+           justify-content: center;
+           align-items: center; 
+           margin: 0;
+           background-color: black;
+           font-family: 恐怖蜘蛛;
+       }
+
+       #game-board {
+            background-color: white;
+           /*background-image: url("./img/qiezi.png");
+           background-repeat: repeat;*/
+            width: 50%;
+            height: 100vmin;
+            display: grid;
+            grid-template-rows: repeat(50, 1fr);
+            grid-template-columns: repeat(50, 1fr);
+        }
+       .snake-head{
+           background-image: url("./img/tanchishe.png");
+           background-size: cover;
+       }
+       .snake-body{
+           background-color: hsl(200,100%,50%);
+           /*background-image: url("./img/mangguo.png");
+           background-size: cover;*/
+           /*border:.25vmin solid black;*/
+           border-radius: 100%;
+       }
+       .food{
+           background-image: url("./img/草莓.png");
+           background-size: cover;
+          /* background-color: pink;*/
+       }
+       #set{
+           width: 50%;
+       }
+       .skin{
+           width: 60px;
+           height: 30px;
+           margin-left: 20px;
+       }
+    </style>
+    <script src="game.js" defer type="module" ></script>
+
+</head>
+<body>
+
+<div id="game-board"> </div>
+
+<div id="set">
+    <h2 style="color: white;font-size: 3em;margin-top: -370px" >
+        得分:<span id="score" style="width: 50px"></span>
+    </h2>
+    <span style="color: white;font-size: 3em">皮肤:</span>
+    <input type="color" id="color">
+    <br>
+    <span style="color: white;font-size: 3em">速度:
+        <input type="radio" name="difficult" id="easy" checked value="10">简单
+        <input type="radio" name="difficult" id="common" checked value="15">一般
+        <input type="radio" name="difficult" id="difficult" checked value="20">困难
+    </span>
+    <audio autoplay  loop src="./bgm/小旭音乐 - 贪吃蛇大作战-夺宝模式.mp3">
+    </audio>
+</div>
+
+
+</body>
+</html>
